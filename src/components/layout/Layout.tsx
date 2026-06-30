@@ -82,7 +82,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-2 cursor-pointer">
                         <ALogo />
-                        <span className="font-bold tracking-tight text-lg hidden sm:block">Anubis Labs</span>
+                        <span className="font-bold tracking-tight text-lg">Anubis Labs</span>
                     </Link>
 
                     <nav className="hidden lg:flex items-center gap-6">
@@ -100,11 +100,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <div className="flex items-center gap-4">
                         <Dialog open={modalOpen} onOpenChange={handleModalOpenChange}>
                             <DialogTrigger asChild>
-                                <Button>Talk to us</Button>
+                                <Button className="h-8 px-3 text-xs sm:h-9 sm:px-4 sm:text-sm">Talk to us</Button>
                             </DialogTrigger>
-                            <DialogContent className="sm:max-w-[600px] glass border-white/10 bg-background/80 p-0 overflow-hidden shadow-[0_0_100px_rgba(255,255,255,0.05)]">
+                            <DialogContent className="w-[95vw] sm:max-w-[600px] max-h-[90vh] overflow-y-auto glass border-white/10 bg-background/80 p-0 shadow-[0_0_100px_rgba(255,255,255,0.05)]">
 
-                                <div className="p-8 relative z-10">
+                                <div className="p-5 sm:p-8 relative z-10">
                                     <DialogHeader>
                                         <DialogTitle className="text-2xl flex items-center gap-2"><Shield className="w-6 h-6 text-primary" /> Start Delivering</DialogTitle>
                                         <DialogDescription className="text-base text-muted-foreground">
@@ -124,7 +124,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                             {/* Honeypot field for spam protection */}
                                             <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
-                                            <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="name">Name *</Label>
                                                     <Input id="name" name="name" required placeholder="Jane Doe" className="bg-background/50" />
@@ -135,7 +135,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                                 </div>
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="company">Company</Label>
                                                     <Input id="company" name="company" placeholder="Acme Corp" className="bg-background/50" />
@@ -146,7 +146,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                                 </div>
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="inquiry">Inquiry Type</Label>
                                                     <Select name="inquiry" defaultValue="Pilot discussion">
@@ -182,7 +182,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                                 <Textarea id="message" name="message" required placeholder="Tell us about your use case and current architecture..." className="min-h-[100px] bg-background/50" />
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="timeline">Timeline (Optional)</Label>
                                                     <Input id="timeline" name="timeline" placeholder="e.g. Q3 2024" className="bg-background/50" />
@@ -220,7 +220,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg lg:hidden pt-24 px-6 flex flex-col space-y-6"
+                        className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg lg:hidden pt-24 px-6 flex flex-col justify-between pb-8"
                     >
                         <nav className="flex flex-col gap-6 text-lg font-medium mt-8">
                             {nav.map((item, idx) => (
@@ -240,11 +240,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                 </motion.div>
                             ))}
                         </nav>
+
+                        <div className="border-t border-white/5 pt-6 text-xs text-muted-foreground/60 flex flex-col gap-2">
+                            <span>© {new Date().getFullYear()} Anubis Labs. All rights reserved.</span>
+                            <span>Calgary, AB</span>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            <main className="flex-1 pt-24 pb-16">
+            <main className="flex-1 pt-24 pb-16 overflow-x-hidden">
                 {children}
             </main>
 

@@ -10,7 +10,7 @@ export function HomePage() {
     return (
         <div className="w-full relative">
             {/* HERO SECTION */}
-            <section id="top" className="relative min-h-[85vh] flex items-center justify-center p-4 pt-16 pb-24 lg:pt-32 lg:pb-32 border-b border-white/5 overflow-hidden">
+            <section id="top" className="relative min-h-[85vh] flex items-center justify-center p-4 pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-white/5 overflow-hidden">
                 <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px] pointer-events-none z-10" />
 
                 {/* Right Background Image */}
@@ -20,7 +20,7 @@ export function HomePage() {
                     transition={{ duration: 1.5 }}
                     className="absolute inset-0 z-0 flex justify-end pointer-events-none"
                 >
-                    <div className="relative w-full lg:w-[65%] h-full">
+                    <div className="relative w-full lg:w-[65%] h-full opacity-40 lg:opacity-100">
                         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10" />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10" />
                         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10" />

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export function AirGappedCaseStudyPage() {
     return (
         <div className="w-full">
-            <section className="container mx-auto px-4 py-24 max-w-4xl relative z-10">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 max-w-4xl relative z-10">
                 <div className="mb-8">
                     <Link to="/case-studies" className="text-primary hover:underline font-medium">&larr; Back to Case Studies</Link>
                 </div>

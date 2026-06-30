@@ -144,8 +144,8 @@ export function CaseStudiesPage() {
 
                                         <div className="mt-auto pt-6 border-t border-white/5">
                                             <Button
-                                                variant="ghost"
-                                                className="w-full justify-between hover:bg-white/5 hover:text-white transition-all duration-300 group/btn border border-transparent hover:border-white/10"
+                                                variant="outline"
+                                                className="w-full justify-between border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group/btn bg-transparent"
                                                 onClick={(e) => handleRequestDetails(e, `Case Study: ${study.title}`)}
                                             >
                                                 Request Details

@@ -6,7 +6,7 @@ export function AgentRuntimePage() {
     return (
         <div className="w-full">
             {/* HERO */}
-            <section className="container mx-auto px-4 py-24 relative lg:pt-32">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 relative">
 
                 <div className="max-w-3xl relative z-10 mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm mb-6">

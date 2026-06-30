@@ -92,7 +92,7 @@ export function ProcessPage() {
 
     return (
         <div className="w-full">
-            <section className="container mx-auto px-4 py-32 relative">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 relative overflow-hidden">
                 {/* Background accents for hero */}
                 <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -150,7 +150,7 @@ export function ProcessPage() {
 
                     {/* Right Content */}
                     <div className="space-y-40 md:space-y-48 pb-[30vh]">
-                        {phases.map((phase) => {
+                        {phases.map((phase, idx) => {
                             const isActive = activePhase === phase.id
                             return (
                                 <motion.div
@@ -163,7 +163,9 @@ export function ProcessPage() {
                                     className={`relative group transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-40"}`}
                                 >
                                     {/* Mobile connector line & dot */}
-                                    <div className="md:hidden absolute left-[15px] top-8 bottom-[-160px] w-px bg-white/10" />
+                                    {idx < phases.length - 1 && (
+                                        <div className="md:hidden absolute left-[15px] top-8 bottom-[-160px] w-px bg-white/10" />
+                                    )}
                                     <div className="md:hidden absolute w-3 h-3 rounded-full left-[10px] top-2 transition-colors duration-500 bg-primary shadow-[0_0_10px_rgba(255,215,0,0.5)] z-10" />
 
                                     <div className="pl-12 md:pl-0">
@@ -250,7 +252,7 @@ export function ProcessPage() {
                 </div>
             </section>
 
-            <section className="py-32 text-center relative">
+            <section className="py-32 text-center relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
                 <motion.div

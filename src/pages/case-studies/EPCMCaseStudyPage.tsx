@@ -29,7 +29,7 @@ export function EPCMCastStudyPage() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
             <div className="absolute top-[40%] left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
 
-            <section className="container mx-auto px-4 py-24 max-w-5xl relative z-10">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 max-w-5xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

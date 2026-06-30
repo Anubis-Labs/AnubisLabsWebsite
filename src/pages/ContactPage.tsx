@@ -73,7 +73,7 @@ export function ContactPage() {
                         </p>
                     </div>
                 ) : (
-                    <div className="bg-card glass border-white/10 p-8 rounded-2xl shadow-2xl">
+                    <div className="bg-card glass border-white/10 p-5 sm:p-8 rounded-2xl shadow-2xl">
                         <form onSubmit={handleFormSubmit} className="space-y-6">
                             <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 

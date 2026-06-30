@@ -10,6 +10,7 @@ import { PrivacyPage } from "../pages/PrivacyPage";
 import { TermsPage } from "../pages/TermsPage";
 import { ContactPage } from "../pages/ContactPage";
 import { SolutionsPage } from "../pages/SolutionsPage";
+import { PrimitivesSpecPage } from "../pages/PrimitivesSpecPage";
 
 import { AgentRuntimePage } from "../pages/solutions/AgentRuntimePage";
 import { KnowledgePlatformPage } from "../pages/solutions/KnowledgePlatformPage";
@@ -34,6 +35,7 @@ export function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/ui-primitives" element={<PrimitivesSpecPage />} />
 
                     {/* Solution Detail Pages */}
                     <Route path="/solutions/agent-runtime" element={<AgentRuntimePage />} />

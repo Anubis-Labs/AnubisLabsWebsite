@@ -32,7 +32,7 @@ export function ServicesPage() {
             <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
 
             {/* HERO */}
-            <section className="container mx-auto px-4 py-32 relative z-10">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 relative z-10">
                 <motion.div
                     initial="hidden"
                     animate="show"

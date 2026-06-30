@@ -8,7 +8,7 @@ import { solutions } from "@/content/site"
 export function SolutionsPage() {
     return (
         <div className="w-full">
-            <section className="container mx-auto px-4 py-24 relative overflow-hidden">
+            <section className="container mx-auto px-4 pt-8 pb-24 lg:pt-16 lg:pb-32 relative overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                     <div className="max-w-3xl">
                         <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
@@ -27,7 +27,7 @@ export function SolutionsPage() {
                         </div>
                     </div>
 
-                    <div className="relative hidden lg:block h-[500px] w-full">
+                    <div className="relative block h-[300px] md:h-[400px] lg:h-[500px] w-full mt-8 lg:mt-0">
                         <svg viewBox="0 0 800 800" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
 
                             {/* Background Sacred Geometry */}
@@ -153,7 +153,7 @@ export function SolutionsPage() {
                                             <Badge variant="secondary">Offline</Badge>
                                         </div>
                                     </div>
-                                    <Button asChild variant="secondary" className="w-full">
+                                    <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent">
                                         <Link to={sol.href}>See details</Link>
                                     </Button>
                                 </CardContent>

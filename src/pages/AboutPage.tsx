@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export function AboutPage() {
     return (
         <div className="w-full">
-            <section className="container mx-auto px-4 py-24 relative lg:pt-32">
+            <section className="container mx-auto px-4 pt-8 pb-24 relative lg:pt-16 lg:pb-32">
 
                 <div className="max-w-3xl relative z-10 mb-16">
                     <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
