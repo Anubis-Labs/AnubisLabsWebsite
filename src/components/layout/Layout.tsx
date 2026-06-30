@@ -10,8 +10,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { nav, footerNav } from "@/content/site"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
-const ALogo = () => (
-    <img src="/anubislogo.svg" alt="Anubis Labs Logo" className="w-8 h-8" />
+const ALogo = ({ className }: { className?: string }) => (
+    <img src="/anubislogo.svg" alt="Anubis Labs Logo" className={`w-8 h-8 transition-transform duration-700 ease-out ${className || ''}`} />
 )
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -80,8 +80,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground flex flex-col">
             <header className="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 cursor-pointer">
-                        <ALogo />
+                    <Link to="/" className="flex items-center gap-2 cursor-pointer group">
+                        <ALogo className="group-hover:rotate-[360deg] group-hover:scale-110" />
                         <span className="font-bold tracking-tight text-lg">Anubis Labs</span>
                     </Link>
 
@@ -100,7 +100,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <div className="flex items-center gap-4">
                         <Dialog open={modalOpen} onOpenChange={handleModalOpenChange}>
                             <DialogTrigger asChild>
-                                <Button className="h-8 px-3 text-xs sm:h-9 sm:px-4 sm:text-sm">Talk to us</Button>
+                                <Button className="h-8 px-3 text-xs sm:h-9 sm:px-4 sm:text-sm hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-shadow duration-300">Talk to us</Button>
                             </DialogTrigger>
                             <DialogContent className="w-[95vw] sm:max-w-[600px] max-h-[90vh] overflow-y-auto glass border-white/10 bg-background/80 p-0 shadow-[0_0_100px_rgba(255,255,255,0.05)]">
 
@@ -249,7 +249,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 )}
             </AnimatePresence>
 
-            <main className="flex-1 pt-24 pb-16 overflow-x-hidden">
+            <main className="flex-1 pt-24 pb-16">
                 {children}
             </main>
 

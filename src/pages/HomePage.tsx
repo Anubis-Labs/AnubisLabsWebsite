@@ -125,9 +125,9 @@ export function HomePage() {
                         {solutions.map((sol) => {
                             const Icon = sol.icon
                             return (
-                                <Card key={sol.title} className="glass hover:-translate-y-2 transition-transform duration-300 group">
+                                <Card key={sol.title} className="glass hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(234,179,8,0.08)] transition-all duration-300 group">
                                     <CardHeader>
-                                        <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 border border-transparent group-hover:border-primary/30">
                                             <Icon className="w-6 h-6" />
                                         </div>
                                         <CardTitle className="text-xl">{sol.title}</CardTitle>

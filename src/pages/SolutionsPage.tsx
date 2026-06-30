@@ -129,9 +129,9 @@ export function SolutionsPage() {
                     {solutions.map((sol) => {
                         const Icon = sol.icon
                         return (
-                            <Card key={sol.title} className="glass flex flex-col hover:-translate-y-1 transition-transform group">
+                            <Card key={sol.title} className="glass flex flex-col hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(234,179,8,0.08)] transition-all duration-300 group">
                                 <CardHeader>
-                                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 border border-transparent group-hover:border-primary/30">
                                         <Icon className="w-6 h-6" />
                                     </div>
                                     <CardTitle className="text-2xl">{sol.title}</CardTitle>

@@ -95,7 +95,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden;
   }
 }
 
@@ -149,4 +149,32 @@
   100% {
     transform: translate(0px, 0px) scale(1);
   }
+}
+
+/* Premium Gold Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(var(--primary), 0.15);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(var(--primary), 0.35);
+  box-shadow: 0 0 10px hsla(var(--primary), 0.2);
+}
+
+/* Custom Text Selection Highlight */
+::selection {
+  background: hsla(var(--primary), 0.25);
+  color: #ffffff;
 }
