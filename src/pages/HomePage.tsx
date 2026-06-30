@@ -37,7 +37,7 @@ export function HomePage() {
     return (
         <div className="w-full relative">
             {/* HERO SECTION */}
-            <section id="top" className="relative min-h-[85vh] flex items-start lg:items-center justify-center p-4 pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-white/5 overflow-hidden">
+            <section id="top" className="relative min-h-[85vh] flex items-start lg:items-center justify-center p-4 pt-2 lg:pt-16 pb-16 lg:pb-24 border-b border-white/5 overflow-hidden">
                 <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px] pointer-events-none z-10" />
 
                 {/* Right Background Image */}
@@ -47,10 +47,10 @@ export function HomePage() {
                     transition={{ duration: 1.5 }}
                     className="absolute inset-0 z-0 flex justify-end pointer-events-none"
                 >
-                    <div className="relative w-full lg:w-[65%] h-full opacity-70 lg:opacity-100">
+                    <div className="relative w-full lg:w-[65%] h-full opacity-95 lg:opacity-100">
                         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10 hidden lg:block" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10 opacity-30 lg:opacity-100" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10 opacity-30 lg:opacity-100" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10 opacity-10 lg:opacity-100" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10 opacity-10 lg:opacity-100" />
                         <img
                             src="/anubus-hero.jpg"
                             className="hidden lg:block w-full h-full object-cover object-[center_right]"
@@ -72,13 +72,13 @@ export function HomePage() {
                     </div>
                 </motion.div>
 
-                <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-20 pt-[6vh] lg:pt-0">
+                <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-20 pt-0 lg:pt-0">
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 pt-4 lg:pt-0"
+                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 pt-0 lg:pt-0 min-h-[76vh] lg:min-h-0 relative"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
@@ -90,7 +90,7 @@ export function HomePage() {
                             </Badge>
                         </motion.div>
 
-                        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1] pt-6 lg:pt-0">
+                        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1] pt-0 lg:pt-0">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/70">
                                 Secure AI
                             </span>
@@ -100,10 +100,7 @@ export function HomePage() {
                             </span>
                         </h1>
 
-                        {/* Spacer on mobile to show the Anubis face under the title */}
-                        <div className="h-[28vh] lg:hidden pointer-events-none" />
-
-                        <div className="relative w-full flex items-center justify-center min-h-[160px] lg:min-h-0">
+                        <div className={`w-full flex items-center justify-center min-h-[160px] lg:min-h-0 ${isMobile ? "absolute bottom-0 left-1/2 -translate-x-1/2 px-4" : "relative"}`}>
                             {/* Small Text / Paragraph */}
                             <motion.p
                                 style={isMobile ? { opacity: mobileTextOpacity, y: mobileTextY } : undefined}

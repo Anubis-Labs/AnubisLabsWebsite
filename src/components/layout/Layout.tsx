@@ -249,7 +249,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 )}
             </AnimatePresence>
 
-            <main className="flex-1 pt-24 pb-16">
+            <main className="flex-1 pt-16 lg:pt-24 pb-16">
                 {children}
             </main>
 
