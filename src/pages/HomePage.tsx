@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Zap, CheckCircle2, Lock, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
@@ -7,6 +8,32 @@ import { Link } from "react-router-dom"
 import { solutions, caseStudies } from "@/content/site"
 
 export function HomePage() {
+    const [isMobile, setIsMobile] = useState(false)
+    const [pointerEvents, setPointerEvents] = useState<"none" | "auto">("none")
+
+    const { scrollY } = useScroll()
+
+    // Mobile scroll animations
+    const mobileTextOpacity = useTransform(scrollY, [0, 80], [1, 0])
+    const mobileTextY = useTransform(scrollY, [0, 80], [0, -10])
+
+    const mobileBtnOpacity = useTransform(scrollY, [40, 100], [0, 1])
+    const mobileBtnY = useTransform(scrollY, [40, 100], [10, 0])
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+        checkMobile()
+        window.addEventListener("resize", checkMobile)
+        return () => window.removeEventListener("resize", checkMobile)
+    }, [])
+
+    useEffect(() => {
+        const unsubscribe = scrollY.on("change", (latest) => {
+            setPointerEvents(latest > 50 ? "auto" : "none")
+        })
+        return () => unsubscribe()
+    }, [scrollY])
+
     return (
         <div className="w-full relative">
             {/* HERO SECTION */}
@@ -30,12 +57,18 @@ export function HomePage() {
                             style={{ mixBlendMode: 'screen' }}
                             alt="Hero background desktop"
                         />
-                        <img
-                            src="/anubis-mobile-hero.png"
+                        <video
                             className="block lg:hidden w-full h-full object-cover object-center"
                             style={{ mixBlendMode: 'screen' }}
-                            alt="Hero background mobile"
-                        />
+                            poster="/anubis-mobile-hero.png"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            aria-label="Hero background mobile"
+                        >
+                            <source src="/anubis-mobile-hero.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </motion.div>
 
@@ -45,19 +78,19 @@ export function HomePage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 pt-[32vh] lg:pt-0"
+                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 pt-4 lg:pt-0"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="flex justify-center lg:justify-start"
+                            className="hidden sm:flex justify-center lg:justify-start"
                         >
                             <Badge variant="secondary" className="px-4 py-1.5 bg-primary/10 text-primary border-primary/20 backdrop-blur-md text-sm font-medium tracking-wide shadow-[0_0_15px_rgba(234,179,8,0.2)]">
                                 <Shield className="w-4 h-4 mr-2 inline-block" /> Built for auditability, governance, and real delivery
                             </Badge>
                         </motion.div>
 
-                        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1]">
+                        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1] pt-6 lg:pt-0">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/70">
                                 Secure AI
                             </span>
@@ -67,23 +100,40 @@ export function HomePage() {
                             </span>
                         </h1>
 
-                        <p className="text-base sm:text-xl lg:text-2xl text-muted-foreground/90 max-w-2xl leading-relaxed font-medium">
-                            Anubis Labs builds governed RAG, knowledge graphs, and agent runtimes with policy gates, approvals, and <span className="text-foreground">forensic traceability</span>. No hype. Just systems your org can trust.
-                        </p>
+                        {/* Spacer on mobile to show the Anubis face under the title */}
+                        <div className="h-[28vh] lg:hidden pointer-events-none" />
 
-                        <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto lg:mx-0">
-                            <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-3 sm:py-6 px-10 h-auto group relative overflow-hidden justify-center">
-                                <Link to="?contact=true" className="flex items-center justify-center gap-2">
-                                    Talk to us
-                                    <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform inline-block" />
-                                </Link>
-                            </Button>
-                            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg py-3 sm:py-6 px-10 h-auto bg-transparent justify-center">
-                                <Link to="/security" className="flex items-center justify-center gap-2">
-                                    See Security
-                                    <Shield className="w-5 h-5" />
-                                </Link>
-                            </Button>
+                        <div className="relative w-full flex items-center justify-center min-h-[160px] lg:min-h-0">
+                            {/* Small Text / Paragraph */}
+                            <motion.p
+                                style={isMobile ? { opacity: mobileTextOpacity, y: mobileTextY } : undefined}
+                                className={`text-base sm:text-xl lg:text-2xl text-muted-foreground/90 max-w-2xl leading-relaxed font-medium ${
+                                    isMobile ? "absolute w-full pointer-events-none" : "static"
+                                }`}
+                            >
+                                Anubis Labs builds governed RAG, knowledge graphs, and agent runtimes with policy gates, approvals, and <span className="text-foreground">forensic traceability</span>. No hype. Just systems your org can trust.
+                            </motion.p>
+
+                            {/* Buttons */}
+                            <motion.div
+                                style={isMobile ? { opacity: mobileBtnOpacity, y: mobileBtnY, pointerEvents } : undefined}
+                                className={`flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto lg:mx-0 ${
+                                    isMobile ? "absolute w-full" : "static"
+                                }`}
+                            >
+                                <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-3 sm:py-6 px-10 h-auto group relative overflow-hidden justify-center">
+                                    <Link to="?contact=true" className="flex items-center justify-center gap-2">
+                                        Talk to us
+                                        <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform inline-block" />
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg py-3 sm:py-6 px-10 h-auto bg-transparent justify-center">
+                                    <Link to="/security" className="flex items-center justify-center gap-2">
+                                        See Security
+                                        <Shield className="w-5 h-5" />
+                                    </Link>
+                                </Button>
+                            </motion.div>
                         </div>
                     </motion.div>
 
