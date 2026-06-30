@@ -20,10 +20,30 @@ export function ContactPage() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        setTimeout(() => {
+        const form = e.currentTarget
+        const formData = new FormData(form)
+        const payload = Object.fromEntries(formData.entries())
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+
+            if (!response.ok) {
+                const body = await response.json().catch(() => null)
+                throw new Error(body?.error || "Unable to submit request")
+            }
+
             setIsSubmitting(false)
             setSubmitSuccess(true)
-        }, 1500)
+        } catch (error) {
+            console.error("Contact form submission failed:", error)
+            setIsSubmitting(false)
+        }
     }
 
     return (
