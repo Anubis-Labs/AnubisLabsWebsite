@@ -45,7 +45,7 @@ export function HomePage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10"
+                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10 pt-[32vh] lg:pt-0"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
@@ -57,7 +57,7 @@ export function HomePage() {
                             </Badge>
                         </motion.div>
 
-                        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1]">
+                        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1]">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/70">
                                 Secure AI
                             </span>
@@ -67,18 +67,18 @@ export function HomePage() {
                             </span>
                         </h1>
 
-                        <p className="text-2xl text-muted-foreground/90 max-w-2xl leading-relaxed font-medium">
+                        <p className="text-base sm:text-xl lg:text-2xl text-muted-foreground/90 max-w-2xl leading-relaxed font-medium">
                             Anubis Labs builds governed RAG, knowledge graphs, and agent runtimes with policy gates, approvals, and <span className="text-foreground">forensic traceability</span>. No hype. Just systems your org can trust.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto lg:mx-0">
-                            <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-6 px-10 h-auto group relative overflow-hidden justify-center">
+                            <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-3 sm:py-6 px-10 h-auto group relative overflow-hidden justify-center">
                                 <Link to="?contact=true" className="flex items-center justify-center gap-2">
                                     Talk to us
                                     <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform inline-block" />
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg py-6 px-10 h-auto bg-transparent justify-center">
+                            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg py-3 sm:py-6 px-10 h-auto bg-transparent justify-center">
                                 <Link to="/security" className="flex items-center justify-center gap-2">
                                     See Security
                                     <Shield className="w-5 h-5" />
