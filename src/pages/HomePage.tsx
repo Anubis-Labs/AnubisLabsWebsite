@@ -20,10 +20,10 @@ export function HomePage() {
                     transition={{ duration: 1.5 }}
                     className="absolute inset-0 z-0 flex justify-end pointer-events-none"
                 >
-                    <div className="relative w-full lg:w-[65%] h-full opacity-50 lg:opacity-100">
-                        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10" />
+                    <div className="relative w-full lg:w-[65%] h-full opacity-70 lg:opacity-100">
+                        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10 hidden lg:block" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10 opacity-30 lg:opacity-100" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10 opacity-30 lg:opacity-100" />
                         <img
                             src="/anubus-hero.jpg"
                             className="hidden lg:block w-full h-full object-cover object-[center_right]"
