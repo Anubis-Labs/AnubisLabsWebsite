@@ -20,15 +20,21 @@ export function HomePage() {
                     transition={{ duration: 1.5 }}
                     className="absolute inset-0 z-0 flex justify-end pointer-events-none"
                 >
-                    <div className="relative w-full lg:w-[65%] h-full opacity-40 lg:opacity-100">
+                    <div className="relative w-full lg:w-[65%] h-full opacity-50 lg:opacity-100">
                         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent z-10" />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10" />
                         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10" />
                         <img
                             src="/anubus-hero.jpg"
-                            className="w-full h-full object-cover object-[center_right]"
+                            className="hidden lg:block w-full h-full object-cover object-[center_right]"
                             style={{ mixBlendMode: 'screen' }}
-                            alt="Hero background"
+                            alt="Hero background desktop"
+                        />
+                        <img
+                            src="/anubis-mobile-hero.png"
+                            className="block lg:hidden w-full h-full object-cover object-center"
+                            style={{ mixBlendMode: 'screen' }}
+                            alt="Hero background mobile"
                         />
                     </div>
                 </motion.div>
@@ -39,13 +45,12 @@ export function HomePage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full lg:max-w-[55%] space-y-10 relative z-10 py-10"
+                        className="w-full lg:max-w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10"
                     >
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="inline-block"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex justify-center lg:justify-start"
                         >
                             <Badge variant="secondary" className="px-4 py-1.5 bg-primary/10 text-primary border-primary/20 backdrop-blur-md text-sm font-medium tracking-wide shadow-[0_0_15px_rgba(234,179,8,0.2)]">
                                 <Shield className="w-4 h-4 mr-2 inline-block" /> Built for auditability, governance, and real delivery
@@ -66,19 +71,17 @@ export function HomePage() {
                             Anubis Labs builds governed RAG, knowledge graphs, and agent runtimes with policy gates, approvals, and <span className="text-foreground">forensic traceability</span>. No hype. Just systems your org can trust.
                         </p>
 
-                        <div className="flex flex-wrap items-center gap-6 pt-4">
-                            <Button asChild size="lg" className="rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-7 px-10 h-auto group relative overflow-hidden">
-                                <Link to="?contact=true">
-                                    <span className="relative z-10 flex items-center">
-                                        Talk to us <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                                    </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-yellow-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto lg:mx-0">
+                            <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-6 px-10 h-auto group relative overflow-hidden justify-center">
+                                <Link to="?contact=true" className="flex items-center justify-center gap-2">
+                                    Talk to us
+                                    <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform inline-block" />
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 hover:bg-white/5 font-semibold text-lg py-7 px-10 h-auto backdrop-blur-sm transition-all duration-300 hover:border-white/40 group">
-                                <Link to="/security">
+                            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg py-6 px-10 h-auto bg-transparent justify-center">
+                                <Link to="/security" className="flex items-center justify-center gap-2">
                                     See Security
-                                    <Shield className="ml-2 w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                    <Shield className="w-5 h-5" />
                                 </Link>
                             </Button>
                         </div>
