@@ -37,7 +37,7 @@ export function HomePage() {
     return (
         <div className="w-full relative">
             {/* HERO SECTION */}
-            <section id="top" className="relative min-h-[85vh] flex items-center justify-center p-4 pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-white/5 overflow-hidden">
+            <section id="top" className="relative min-h-[85vh] flex items-start lg:items-center justify-center p-4 pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-white/5 overflow-hidden">
                 <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px] pointer-events-none z-10" />
 
                 {/* Right Background Image */}
@@ -72,7 +72,7 @@ export function HomePage() {
                     </div>
                 </motion.div>
 
-                <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-20">
+                <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-20 pt-[6vh] lg:pt-0">
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
