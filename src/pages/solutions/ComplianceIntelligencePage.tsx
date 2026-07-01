@@ -16,11 +16,11 @@ export function ComplianceIntelligencePage() {
                         Compliance <span className="text-primary">Intelligence.</span>
                     </h1>
                     <p className="text-xl text-muted-foreground mb-8">
-                        Deterministic checks first. Generative synthesis second. Radically accelerate policy and QA reviews without sacrificing accuracy.
+                        Deterministic checks first. Generative synthesis second. Speed up policy and QA reviews while keeping evidence and human judgment visible.
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <Button asChild size="lg">
-                            <Link to="?contact=true">Discuss Your Workflow</Link>
+                            <Link to="/contact">Discuss Your Workflow</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg">
                             <Link to="/process">View Implementation Process</Link>
@@ -35,7 +35,7 @@ export function ComplianceIntelligencePage() {
                     <ShieldAlert className="w-12 h-12 text-primary mx-auto mb-6" />
                     <h2 className="text-3xl font-bold mb-4">Philosophy: Rules-first, AI second.</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        LLMs are probabilistic and prone to hallucination. When evaluating high-stakes compliance—from municipal building codes to global supply chain ESG criteria—you cannot rely on guessing. We build systems that extract structured data securely, then pass it through hardcoded, deterministic rules engines. AI handles the ambiguity; code handles the compliance.
+                        LLMs are probabilistic and prone to hallucination. When evaluating high-stakes compliance, teams need more than a plausible answer. We build systems that extract structured data, pass clear requirements through deterministic rule engines, and reserve AI for classification, summarization, and ambiguity support.
                     </p>
                 </div>
             </section>
@@ -47,7 +47,7 @@ export function ComplianceIntelligencePage() {
                     <div className="bg-background/50 border border-white/5 p-6 rounded-2xl shadow-xl flex flex-col gap-4">
                         <CheckCircle2 className="w-8 h-8 text-primary shrink-0" />
                         <h3 className="text-xl font-bold">Deterministic Checks</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Translate complex manuals into absolute logic gates (If X &gt; Y, FAIL). The system evaluates extracted parameters perfectly every time.</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Translate clear requirements into logic gates such as thresholds, required fields, and pass/fail conditions that can be evaluated consistently.</p>
                     </div>
                     <div className="bg-background/50 border border-white/5 p-6 rounded-2xl shadow-xl flex flex-col gap-4">
                         <Database className="w-8 h-8 text-primary shrink-0" />
@@ -57,12 +57,12 @@ export function ComplianceIntelligencePage() {
                     <div className="bg-background/50 border border-white/5 p-6 rounded-2xl shadow-xl flex flex-col gap-4">
                         <Network className="w-8 h-8 text-primary shrink-0" />
                         <h3 className="text-xl font-bold">Jurisdiction Awareness</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Code requirements shift by geography and project phase. The engine dynamically maps requirements based on incoming metadata.</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Code requirements shift by geography and project phase. The engine can route reviews based on jurisdiction, metadata, and policy scope.</p>
                     </div>
                     <div className="bg-background/50 border border-white/5 p-6 rounded-2xl shadow-xl flex flex-col gap-4">
                         <Cpu className="w-8 h-8 text-primary shrink-0" />
                         <h3 className="text-xl font-bold">Risk Scoring</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Flag edge cases for human review immediately. Prioritize human-in-the-loop bandwidth on the 5% of ambiguous applications, automating the 95% standard approvals.</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">Flag edge cases for human review and prioritize reviewer attention where inputs are incomplete, ambiguous, or outside known rules.</p>
                     </div>
                 </div>
             </section>
@@ -94,7 +94,7 @@ export function ComplianceIntelligencePage() {
                         <div className="space-y-8">
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">Municipal Policy Review</h3>
-                                <p className="text-sm text-muted-foreground">Halve permit processing times. Ingest application packages and evaluate them rigorously against local bylaws, creating audit trails for citizens.</p>
+                                <p className="text-sm text-muted-foreground">Ingest application packages, compare them against local requirements, and create reviewable decision records for staff and applicants.</p>
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">Internal Procedure Audits</h3>
@@ -113,10 +113,10 @@ export function ComplianceIntelligencePage() {
             <section className="py-24 text-center">
                 <div className="container mx-auto px-4 max-w-2xl">
                     <h2 className="text-3xl font-bold mb-6">Stop rubber-stamping.</h2>
-                    <p className="text-lg text-muted-foreground mb-8">Reduce your QA backlog by implementing deterministic AI evaluation pipelines.</p>
+                    <p className="text-lg text-muted-foreground mb-8">Reduce review friction with evidence-backed evaluation pipelines and clear escalation paths.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-14 px-8 text-lg">
-                            <Link to="?contact=true">Scope a Pilot Architecture</Link>
+                            <Link to="/contact">Scope a Pilot Architecture</Link>
                         </Button>
                     </div>
                 </div>

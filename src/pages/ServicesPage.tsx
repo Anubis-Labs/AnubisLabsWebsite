@@ -53,12 +53,12 @@ export function ServicesPage() {
                     </motion.h1>
 
                     <motion.p variants={staggerItem} className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl font-light">
-                        Deploying production AI requires rigid methodology. We don't do endless consulting; we sell <strong className="text-white font-medium">high-velocity, deterministic delivery packages</strong> that end in audit-ready systems.
+                        Deploying production AI requires a clear scope, real controls, and visible handoff artifacts. We work in bounded delivery packages that end in usable systems, not open-ended slideware.
                     </motion.p>
 
                     <motion.div variants={staggerItem} className="flex flex-wrap gap-4">
                         <Button asChild size="lg" className="h-14 px-8 text-md rounded-full shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_40px_rgba(255,215,0,0.4)] transition-shadow">
-                            <Link to="?contact=true">Discuss Engagement <ArrowRight className="w-4 h-4 ml-2" /></Link>
+                            <Link to="/contact">Discuss Engagement <ArrowRight className="w-4 h-4 ml-2" /></Link>
                         </Button>
                     </motion.div>
                 </motion.div>
@@ -137,7 +137,7 @@ export function ServicesPage() {
                             <FileText className="w-8 h-8 text-primary" />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Standard Deliverables</h2>
-                        <p className="text-muted-foreground text-xl font-light">Every production engagement concludes with formal documentation naturally sculpted for rigid InfoSec review and seamless operations handoff.</p>
+                        <p className="text-muted-foreground text-xl font-light">Every production engagement concludes with documentation built for InfoSec review, operational handoff, and future maintenance.</p>
                     </motion.div>
 
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -178,7 +178,7 @@ export function ServicesPage() {
                     <p className="text-xl text-muted-foreground mb-12 font-light leading-relaxed">If your regulatory requirements demand specific delivery models, our engineering team is built to adapt without compromising rigor.</p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <Button asChild size="lg" className="h-16 px-10 text-lg rounded-full shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_40px_rgba(255,215,0,0.4)] transition-all hover:-translate-y-1 w-full sm:w-auto">
-                            <Link to="?contact=true">Discuss Engagement</Link>
+                            <Link to="/contact">Discuss Engagement</Link>
                         </Button>
                         <Button asChild size="lg" variant="outline" className="h-16 px-10 text-lg rounded-full border-white/10 hover:border-white/20 hover:bg-white/5 transition-all hover:-translate-y-1 w-full sm:w-auto">
                             <Link to="/process">View Delivery Process</Link>

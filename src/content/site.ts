@@ -114,62 +114,62 @@ export const securityPillars = [
 export const caseStudies = [
     {
         title: "Enterprise Pursuit Intelligence",
-        outcome: "Complex bid packages -> structured pursuit requirements, risks, milestones, and source-backed answers",
+        outcome: "Complex bid packages become structured requirements, risks, milestones, and source-backed answers",
         details: "AI-assisted document intelligence for classifying multi-file RFP packages, extracting obligations, and turning pursuit material into usable proposal workflow artifacts.",
         bullets: [
             "Classifies specifications, schedules, forms, drawings, legal language, constraints, and supporting material by business relevance",
             "Extracts requirements, milestones, scope items, risks, interfaces, constraints, and compliance references",
             "Grounded Q&A returns answers with references back to source documents, pages, or content segments where available"
         ],
-        tags: ["RFPs", "Retrieval", "Traceability", "Workflows"],
+        tags: ["Retrieval", "Evidence", "Workflow"],
         href: "/case-studies/enterprise-pursuit-intelligence"
     },
     {
         title: "Evidence-Backed Staff Intelligence",
-        outcome: "Scattered staff evidence -> reviewable proposal-ready expertise signals",
+        outcome: "Scattered staff evidence becomes reviewable, proposal-ready expertise signals",
         details: "A governed staff intelligence layer that combines resumes, questionnaire responses, project history, deliverable evidence, and curated narratives into defensible profile recommendations.",
         bullets: [
             "Separates authoritative business data, curated profile data, source-resume evidence, and AI-derived suggestions",
             "Surfaces skills, domains, project exposure, client experience, deliverables, leadership indicators, and proposal proof points",
             "Keeps recommendations reviewable by showing why a person or profile is being suggested"
         ],
-        tags: ["Staffing", "Evidence", "Profiles", "Governance"],
+        tags: ["Evidence", "Workflow", "Governance"],
         href: "/case-studies/evidence-backed-staff-intelligence"
     },
     {
         title: "Project Experience Retrieval",
-        outcome: "Institutional project memory -> searchable business development evidence",
+        outcome: "Institutional project memory becomes searchable business development evidence",
         details: "A project evidence layer combining structured portfolio filters with semantic search over project narratives for faster pursuit research and stronger proof points.",
         bullets: [
             "Search by client, market, phase, location, project type, technical scope, challenges, and delivered value",
             "Retrieves the right evidence inside each project, not just the right project record",
             "Helps teams reuse prior work without inventing claims or losing human review"
         ],
-        tags: ["Business Development", "Semantic Search", "Evidence", "Proposals"],
+        tags: ["Retrieval", "Evidence", "Workflow"],
         href: "/case-studies/project-experience-retrieval"
     },
     {
         title: "Governed Corporate Knowledge Assistant",
-        outcome: "Distributed standards and procedures -> cited, governed answers staff can trust",
+        outcome: "Distributed standards and procedures become cited answers staff can trust",
         details: "Enterprise retrieval built around semantic search, structured knowledge relationships, deterministic routing, citation controls, and evidence-quality checks.",
         bullets: [
             "Routes questions into the governed workflow before retrieval, instead of sending everything to a generic model",
             "Prefers current and authoritative references with citation context and document-version awareness",
             "Avoids over-answering when evidence is weak, missing, or ambiguous"
         ],
-        tags: ["RAG", "Citations", "Governance", "Knowledge Graph"],
+        tags: ["RAG", "Evidence", "Governance"],
         href: "/case-studies/governed-corporate-knowledge-assistant"
     },
     {
         title: "AI-Assisted Document Review",
-        outcome: "Evolving documents -> focused change summaries and review-ready observations",
+        outcome: "Evolving documents become focused change summaries and review-ready observations",
         details: "A practical document review workflow that helps users compare versions, surface meaningful changes, and focus attention on areas that may require review.",
         bullets: [
             "Supports side-by-side review, change summaries, risk-focused observations, and conversational exploration",
             "Organizes change information into clearer views without replacing reviewer judgment",
             "Helps teams understand what changed, why it may matter, and where to look next"
         ],
-        tags: ["Document Review", "Comparison", "Risk", "Workflow"],
+        tags: ["Evidence", "Workflow", "Governance"],
         href: "/case-studies/ai-assisted-document-review"
     },
     {
@@ -181,19 +181,19 @@ export const caseStudies = [
             "Approval gates for high-risk actions and auditable tool calls",
             "Predictable usage controls with budgets and rate limits"
         ],
-        tags: ["Local Models", "Air-gapped", "Approvals", "Sandbox"],
+        tags: ["Offline", "Governance", "Workflow"],
         href: "/case-studies/air-gapped-sandbox"
     },
     {
         title: "Industrial Visual Delivery Platform",
-        outcome: "CAD/BIM screenshots -> decision-grade renders, videos, and project deliverables",
+        outcome: "CAD/BIM screenshots become decision-grade renders, videos, and project deliverables",
         details: "A production AI workflow platform for turning technical project visuals into polished client-facing assets without losing geometry, workspace controls, or delivery traceability.",
         bullets: [
             "Orb-based render intake with preflight validation, idempotent uploads, workspace scoping, and structured error handling",
             "Project-aware visual history: anchor views, additional views, revisions, masked edits, downloads, and delivery links",
             "Industrial delivery layer spanning construction sequences, flythrough assembly, CAD plugins, desktop studio tooling, and branded artifacts"
         ],
-        tags: ["Agent", "Cloud", "Industrial", "Delivery"],
+        tags: ["Cloud", "Industrial", "Workflow"],
         href: "/case-studies/industrial-visual-delivery-platform"
     },
     {
@@ -205,7 +205,7 @@ export const caseStudies = [
             "Local-first media layer for photos, recordings, bundled voice, system TTS fallback, routines, and card grids",
             "Speech-growth loop spanning AAC cards, phrase ladders, routine boards, progress logs, weekly digests, and play activities"
         ],
-        tags: ["Offline", "SwiftUI", "Privacy", "Family"],
+        tags: ["Offline", "Family", "Workflow"],
         href: "/case-studies/early-language-ipad-companion"
     },
     {
@@ -217,7 +217,7 @@ export const caseStudies = [
             "Offline Android spine with packaged content, audio assets, Room persistence, review state, rewards, analytics, and resume cursors",
             "Speech practice includes partial-result fallback, no-speech recovery, unavailable-recognizer handling, duplicate-start protection, and an escape path"
         ],
-        tags: ["Android", "Offline", "Speech", "Learning"],
+        tags: ["Offline", "Learning", "Workflow"],
         href: "/case-studies/real-life-mandarin-learning-app"
     }
 ];

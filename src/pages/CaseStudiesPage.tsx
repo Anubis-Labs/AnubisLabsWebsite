@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 const filters = {
-    Industry: ["EPCM", "Gov", "Regulated"],
-    Deployment: ["VPC", "Offline", "Cloud"],
-    Capability: ["RAG", "Compliance", "Agent"]
+    Work: ["RAG", "Retrieval", "Evidence", "Workflow"],
+    Environment: ["Offline", "Cloud", "Governance"],
+    Product: ["Industrial", "Learning", "Family"]
 }
 
 const containerVariants = {
@@ -56,7 +56,7 @@ export function CaseStudiesPage() {
                         Proof of <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">Execution.</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                        Learn how we deliver robust, governed AI workflows for highly regulated clients.
+                        Selected builds across enterprise knowledge, pursuit intelligence, document review, industrial visualization, and local-first product systems. Each example shows useful AI with clear boundaries, evidence, review paths, and production-grade delivery.
                     </p>
                 </motion.div>
 

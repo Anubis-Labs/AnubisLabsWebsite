@@ -20,13 +20,13 @@ export function AboutPage() {
                     <div>
                         <h2 className="text-3xl font-bold mb-4 flex items-center gap-2"><Target className="text-primary w-6 h-6" /> Mission</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            To build and deploy governed AI runtimes that adhere to stringent regulatory, infosec, and operational standards. We ensure every output is auditable, every action is permitted, and every risk is mitigated natively in the architecture.
+                        To build and deploy governed AI systems that can meet real regulatory, InfoSec, and operational constraints. We design for auditable outputs, permitted actions, and risk controls that are part of the architecture from the start.
                         </p>
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold mb-4 flex items-center gap-2"><Globe className="text-primary w-6 h-6" /> Operating Model</h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            Based in Calgary, AB, we operate dynamically alongside enterprise IT and security teams globally. We maintain limited concurrent engagements, prioritizing obsessive engineering quality and long-term defensibility over rapid scale.
+                            Based in Calgary, AB, we work alongside enterprise IT, security, and operations teams. We keep concurrent engagements limited so each build receives senior attention and long-term architectural care.
                         </p>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export function AboutPage() {
                             <div>
                                 <h3 className="text-xl font-bold mb-2">Defend & Govern</h3>
                                 <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Trust is established through hard rules. We enforce RBAC directly into retrieval workflows and place deterministic policy engines in front of all probabilistic generation.
+                                    Trust is established through visible controls. We design retrieval workflows around RBAC and place deterministic policy checks in front of probabilistic generation where the risk requires it.
                                 </p>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ export function AboutPage() {
                             <div>
                                 <h3 className="text-xl font-bold mb-2">Minimize Blast Radius</h3>
                                 <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Systems should fail gracefully and securely. We enforce rate and token budgets, restrict egress connectivity, and construct isolated sandboxes natively.
+                                    Systems should fail gracefully and securely. We use rate and token budgets, restricted egress patterns, and isolated sandboxes to limit operational risk.
                                 </p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ export function AboutPage() {
                     <p className="text-lg text-muted-foreground mb-8">Discuss architectures, infrastructure challenges, and your regulatory posture directly with our engineering staff.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button asChild size="lg" className="h-14 px-8 text-lg">
-                            <Link to="?contact=true">Request Engineering Sync</Link>
+                            <Link to="/contact">Request Engineering Sync</Link>
                         </Button>
                     </div>
                 </div>

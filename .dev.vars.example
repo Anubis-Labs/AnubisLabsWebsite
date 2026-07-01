@@ -1,3 +1,3 @@
 RESEND_API_KEY=re_...
-CONTACT_EMAIL=dave@example.com
-RESEND_FROM=Anubis Labs <hello@your-verified-domain.com>
+CONTACT_EMAIL=dhughes@anubislabs.ca
+RESEND_FROM=Anubis Labs <onboarding@resend.dev>

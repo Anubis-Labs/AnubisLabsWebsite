@@ -19,10 +19,10 @@ export function SolutionsPage() {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button asChild size="lg" className="h-12 px-8">
-                                <Link to="?contact=true">Talk to us</Link>
+                                <Link to="/contact">Talk to us</Link>
                             </Button>
                             <Button asChild variant="outline" size="lg" className="h-12 px-8 glass interactive">
-                                <Link to="?contact=true">Request architectural review</Link>
+                                <Link to="/contact">Request architectural review</Link>
                             </Button>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ export function SolutionsPage() {
                     <h2 className="text-3xl font-bold mb-6">Not sure which solution fits?</h2>
                     <p className="text-lg text-muted-foreground mb-8">Discuss your operational constraints with our architecture team.</p>
                     <Button asChild size="lg" className="h-14 px-8">
-                        <Link to="?contact=true">Book a 20 Min Consultation</Link>
+                        <Link to="/contact">Book a 20 Min Consultation</Link>
                     </Button>
                 </div>
             </section>

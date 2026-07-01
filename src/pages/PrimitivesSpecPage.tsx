@@ -107,9 +107,9 @@ export function PrimitivesSpecPage() {
                         <div>
                             <span className="text-xs text-muted-foreground font-mono block mb-2">[Body - Leading Large]</span>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                Automation with approvals, budgets, and absolute traceability. Build agents that can take action without compromising enterprise security.
+                                Automation with approvals, budgets, and reviewable traces. Build agents that can take bounded action without bypassing enterprise controls.
                             </p>
-                            <CodeBlock id="typo-body" code={`<p className="text-lg md:text-xl text-muted-foreground leading-relaxed">\n  Automation with approvals, budgets, and absolute traceability.\n</p>`} />
+                            <CodeBlock id="typo-body" code={`<p className="text-lg md:text-xl text-muted-foreground leading-relaxed">\n  Automation with approvals, budgets, and reviewable traces.\n</p>`} />
                         </div>
                     </div>
                 </div>

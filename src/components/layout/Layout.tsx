@@ -17,6 +17,7 @@ const ALogo = ({ className }: { className?: string }) => (
 export function Layout({ children }: { children: React.ReactNode }) {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
+    const [submitError, setSubmitError] = useState("")
     const location = useLocation()
     const navigate = useNavigate()
     const searchParams = new URLSearchParams(location.search)
@@ -44,6 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitError("")
 
         try {
             const formData = new FormData(e.currentTarget)
@@ -70,7 +72,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             }, 3000)
         } catch (error: any) {
             console.error('Submission error:', error)
-            alert(`Failed to send message: ${error.message || 'Please try again.'}`)
+            setSubmitError(error.message || 'Please try again.')
         } finally {
             setIsSubmitting(false)
         }
@@ -117,12 +119,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                                 <CheckCircle2 className="w-8 h-8" />
                                             </div>
                                             <h3 className="text-2xl font-bold">Request Received</h3>
-                                            <p className="text-muted-foreground max-w-sm">Our engineering team will review your requirements and reach out within 24 hours.</p>
+                                            <p className="text-muted-foreground max-w-sm">Our engineering team will review your requirements and follow up with next steps.</p>
                                         </div>
                                     ) : (
                                         <form onSubmit={handleFormSubmit} className="space-y-4 mt-6">
                                             {/* Honeypot field for spam protection */}
                                             <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+                                            {submitError && (
+                                                <div className="rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+                                                    {submitError}
+                                                </div>
+                                            )}
 
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
@@ -185,7 +193,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
                                                     <Label htmlFor="timeline">Timeline (Optional)</Label>
-                                                    <Input id="timeline" name="timeline" placeholder="e.g. Q3 2024" className="bg-background/50" />
+                                                    <Input id="timeline" name="timeline" placeholder="e.g. Q3 2026" className="bg-background/50" />
                                                 </div>
                                                 <div className="space-y-2">
                                                     <Label htmlFor="budget">Budget Range (Optional)</Label>

@@ -6,6 +6,18 @@ type Env = {
     RESEND_FROM?: string
 }
 
+const escapeHtml = (value = "") =>
+    value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;")
+
+const clean = (value?: string) => value?.toString().trim() || ""
+
+const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+
 const json = (body: unknown, init?: ResponseInit) =>
     new Response(JSON.stringify(body), {
         ...init,
@@ -18,9 +30,18 @@ const json = (body: unknown, init?: ResponseInit) =>
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     try {
         const body = await request.json<Record<string, string>>()
-        const { name, email, company, role, inquiry, deployment, message, timeline, budget, _gotcha } = body
+        const name = clean(body.name)
+        const email = clean(body.email)
+        const company = clean(body.company)
+        const role = clean(body.role)
+        const inquiry = clean(body.inquiry)
+        const deployment = clean(body.deployment)
+        const message = clean(body.message)
+        const timeline = clean(body.timeline)
+        const budget = clean(body.budget)
+        const gotcha = clean(body._gotcha)
 
-        if (_gotcha) {
+        if (gotcha) {
             return json({ message: "Request received" })
         }
 
@@ -28,30 +49,60 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
             return json({ error: "Name, email, and message are required" }, { status: 400 })
         }
 
-        if (!env.RESEND_API_KEY) {
-            return json({ error: "RESEND_API_KEY is not configured" }, { status: 500 })
+        if (!isValidEmail(email)) {
+            return json({ error: "A valid email address is required" }, { status: 400 })
+        }
+
+        const missingConfig = [
+            !env.RESEND_API_KEY && "RESEND_API_KEY",
+            !env.CONTACT_EMAIL && "CONTACT_EMAIL",
+            !env.RESEND_FROM && "RESEND_FROM",
+        ].filter(Boolean)
+
+        if (missingConfig.length > 0) {
+            console.error(`Contact form missing configuration: ${missingConfig.join(", ")}`)
+            return json({ error: "Contact form email delivery is not configured" }, { status: 500 })
         }
 
         const resend = new Resend(env.RESEND_API_KEY)
-        const recipientEmail = env.CONTACT_EMAIL || "your-email@example.com"
-        const fromEmail = env.RESEND_FROM || "Anubis Labs <onboarding@resend.dev>"
+        const recipientEmail = env.CONTACT_EMAIL!
+        const fromEmail = env.RESEND_FROM!
+        const subjectInquiry = inquiry || "Website"
+
+        const fields = [
+            ["Name", name],
+            ["Email", email],
+            ["Company", company || "N/A"],
+            ["Role", role || "N/A"],
+            ["Inquiry Type", inquiry || "N/A"],
+            ["Target Deployment", deployment || "N/A"],
+            ["Message", message],
+            ["Timeline", timeline || "N/A"],
+            ["Budget Range", budget || "N/A"],
+        ]
+
+        const htmlRows = fields
+            .map(([label, value]) => {
+                const formattedValue = label === "Message"
+                    ? escapeHtml(value).replace(/\n/g, "<br />")
+                    : escapeHtml(value)
+                return `<p><strong>${escapeHtml(label)}:</strong><br />${formattedValue}</p>`
+            })
+            .join("")
+
+        const text = fields
+            .map(([label, value]) => `${label}: ${value}`)
+            .join("\n\n")
 
         const { data, error } = await resend.emails.send({
             from: fromEmail,
             to: [recipientEmail],
             replyTo: email,
-            subject: `New Inquiry from ${name} - ${inquiry || "Website"}`,
+            subject: `New Anubis Labs inquiry from ${name} - ${subjectInquiry}`,
+            text,
             html: `
                 <h2>New Contact Request</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Company:</strong> ${company || "N/A"}</p>
-                <p><strong>Role:</strong> ${role || "N/A"}</p>
-                <p><strong>Inquiry Type:</strong> ${inquiry || "N/A"}</p>
-                <p><strong>Target Deployment:</strong> ${deployment || "N/A"}</p>
-                <p><strong>Message:</strong><br/> ${message}</p>
-                <p><strong>Timeline:</strong> ${timeline || "N/A"}</p>
-                <p><strong>Budget Range:</strong> ${budget || "N/A"}</p>
+                ${htmlRows}
             `,
         })
 

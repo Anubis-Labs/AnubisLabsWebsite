@@ -108,7 +108,7 @@ export function HomePage() {
                                     isMobile ? "absolute w-full pointer-events-none" : "static"
                                 }`}
                             >
-                                Anubis Labs builds governed RAG, knowledge graphs, and agent runtimes with policy gates, approvals, and <span className="text-foreground">forensic traceability</span>. No hype. Just systems your org can trust.
+                                Anubis Labs turns messy documents, workflows, and operational data into controlled AI systems with policy gates, approvals, and <span className="text-foreground">reviewable evidence</span>. Built to be used, inspected, and trusted in production.
                             </motion.p>
 
                             {/* Buttons */}
@@ -119,7 +119,7 @@ export function HomePage() {
                                 }`}
                             >
                                 <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)] transition-all duration-300 font-bold text-lg py-3 sm:py-6 px-10 h-auto group relative overflow-hidden justify-center">
-                                    <Link to="?contact=true" className="flex items-center justify-center gap-2">
+                                    <Link to="/contact" className="flex items-center justify-center gap-2">
                                         Talk to us
                                         <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform inline-block" />
                                     </Link>
@@ -168,7 +168,7 @@ export function HomePage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="mb-16 max-w-2xl">
                         <h2 className="text-3xl md:text-5xl font-bold mb-4">Core Solutions</h2>
-                        <p className="text-lg text-muted-foreground">Purpose-built platforms for regulated data and automated workflows.</p>
+                        <p className="text-lg text-muted-foreground">Purpose-built AI systems for sensitive data, complex workflows, and reviewable automation.</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
@@ -201,24 +201,24 @@ export function HomePage() {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4">How We Work</h2>
-                        <p className="text-muted-foreground max-w-xl mx-auto">A proven delivery playbook minimizing hallucination risk.</p>
+                        <p className="text-muted-foreground max-w-xl mx-auto">A bounded delivery playbook for turning high-risk AI ideas into controlled production systems.</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         <div className="bg-card glass p-6 rounded-xl border border-white/5 text-center">
                             <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4 font-bold">1</div>
                             <h3 className="font-semibold mb-2">Pilot Scope</h3>
-                            <p className="text-sm text-muted-foreground">Rapidly iterate an architecture mapping to your precise pain points.</p>
+                            <p className="text-sm text-muted-foreground">Map the workflow, users, data boundaries, and success criteria before we build.</p>
                         </div>
                         <div className="bg-card glass p-6 rounded-xl border border-white/5 text-center">
                             <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4 font-bold">2</div>
                             <h3 className="font-semibold mb-2">Build + Harden</h3>
-                            <p className="text-sm text-muted-foreground">Implement production-grade rails with strict security compliance.</p>
+                            <p className="text-sm text-muted-foreground">Implement the core workflow with policy gates, evaluations, and deployment controls.</p>
                         </div>
                         <div className="bg-card glass p-6 rounded-xl border border-white/5 text-center">
                             <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4 font-bold">3</div>
                             <h3 className="font-semibold mb-2">Rollout + Operate</h3>
-                            <p className="text-sm text-muted-foreground">Deploy to VPC/Cloud and equip your team with forensic traces.</p>
+                            <p className="text-sm text-muted-foreground">Deploy to the right environment and hand over logs, runbooks, and review paths.</p>
                         </div>
                     </div>
 
@@ -236,7 +236,7 @@ export function HomePage() {
                     <div className="mb-16 flex flex-col md:flex-row items-end justify-between gap-6">
                         <div className="max-w-2xl">
                             <h2 className="text-3xl md:text-5xl font-bold mb-4">Proof of Execution</h2>
-                            <p className="text-lg text-muted-foreground">We partner with enterprise teams to automate their highest-stakes workflows.</p>
+                            <p className="text-lg text-muted-foreground">Selected builds across enterprise knowledge, pursuit intelligence, document review, industrial visualization, and local-first product systems.</p>
                         </div>
                         <Button asChild variant="outline">
                             <Link to="/case-studies">View all case studies</Link>
@@ -276,10 +276,10 @@ export function HomePage() {
             < section className="py-24 bg-white/[0.02] border-t border-white/5 text-center" >
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-6">Start Delivering.</h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">We limit our client intake to maintain obsessive engineering quality. Reach out to start a conversation.</p>
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">We take on a limited number of focused engagements so the work gets senior attention from architecture through deployment. Reach out to start a conversation.</p>
                     <div className="flex gap-4 justify-center">
                         <Button asChild size="lg" className="h-14 px-8 text-lg">
-                            <Link to="?contact=true">Get in Touch</Link>
+                            <Link to="/contact">Get in Touch</Link>
                         </Button>
                     </div>
                 </div>

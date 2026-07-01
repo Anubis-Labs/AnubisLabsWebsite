@@ -16,11 +16,11 @@ export function AgentRuntimePage() {
                         Policy-Gated <span className="text-primary">Agent Runtime.</span>
                     </h1>
                     <p className="text-xl text-muted-foreground mb-8">
-                        Automation with approvals, budgets, and absolute traceability. Build agents that can take action without compromising enterprise security.
+                        Automation with approvals, budgets, and reviewable traces. Build agents that can take bounded action without bypassing enterprise controls.
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <Button asChild size="lg">
-                            <Link to="?contact=true">Request a Pilot</Link>
+                            <Link to="/contact">Request a Pilot</Link>
                         </Button>
                         <Button asChild variant="outline" size="lg">
                             <Link to="/security">See Security Posture</Link>
@@ -46,7 +46,7 @@ export function AgentRuntimePage() {
                             <li className="flex gap-3 text-muted-foreground"><div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div> Tool execution restricted by deterministic policy gates</li>
                             <li className="flex gap-3 text-muted-foreground"><div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div> Human-in-the-loop approval blocks for high-risk execution paths</li>
                             <li className="flex gap-3 text-muted-foreground"><div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div> Hardened budget controls and API rate limiting</li>
-                            <li className="flex gap-3 text-muted-foreground"><div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div> Immutable forensic logs covering context, reasoning, and tool artifacts</li>
+                            <li className="flex gap-3 text-muted-foreground"><div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div> Reviewable run logs covering context, tool calls, and generated artifacts</li>
                         </ul>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ export function AgentRuntimePage() {
                                 <Terminal className="w-6 h-6 text-muted-foreground" />
                             </div>
                             <span className="font-semibold text-sm">Logs / Traces</span>
-                            <p className="text-xs text-muted-foreground">Immutable forensic streams</p>
+                            <p className="text-xs text-muted-foreground">Reviewable trace streams</p>
                         </div>
                     </div>
                 </div>
@@ -104,15 +104,15 @@ export function AgentRuntimePage() {
                         <div className="space-y-6">
                             <div className="bg-card glass p-6 border border-white/5 rounded-xl">
                                 <h3 className="text-xl font-semibold mb-2">Internal IT/Ops Automation</h3>
-                                <p className="text-sm text-muted-foreground">Resolve Tier 1 and Tier 2 support tickets autonomously, pausing for human approval strictly when mutating critical systems.</p>
+                                <p className="text-sm text-muted-foreground">Help resolve Tier 1 and Tier 2 support tickets, pausing for human approval before sensitive or system-changing actions.</p>
                             </div>
                             <div className="bg-card glass p-6 border border-white/5 rounded-xl">
                                 <h3 className="text-xl font-semibold mb-2">Standards Q&A + Actions</h3>
-                                <p className="text-sm text-muted-foreground">Query thousands of engineering standards and generate spec-compliant boilerplates that are checked definitively against the baseline.</p>
+                                <p className="text-sm text-muted-foreground">Query engineering standards and generate draft boilerplate that can be checked against approved source material.</p>
                             </div>
                             <div className="bg-card glass p-6 border border-white/5 rounded-xl">
                                 <h3 className="text-xl font-semibold mb-2">Audit Report Generation</h3>
-                                <p className="text-sm text-muted-foreground">Synthesize risk compliance reports requiring complex chained logic, backed natively by exact citations and deterministic rules.</p>
+                                <p className="text-sm text-muted-foreground">Draft risk and compliance reports from cited evidence, with deterministic checks where rules can be expressed clearly.</p>
                             </div>
                         </div>
                     </div>
@@ -123,14 +123,14 @@ export function AgentRuntimePage() {
                                 <Server className="w-6 h-6 text-primary shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-semibold mb-1">Offline & Local-First</h4>
-                                    <p className="text-sm text-muted-foreground">Operate the entire stack in fully air-gapped environments utilizing highly optimized local LLMs, guaranteeing zero external data transit.</p>
+                                    <p className="text-sm text-muted-foreground">Run local-first or offline configurations for suitable workflows, using local models where the performance and privacy requirements fit.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 items-start">
                                 <Shield className="w-6 h-6 text-primary shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-semibold mb-1">VPC Installations</h4>
-                                    <p className="text-sm text-muted-foreground">Container orchestration directly inside your AWS, Azure, or GCP Virtual Private Cloud, retaining infrastructure compliance natively.</p>
+                                    <p className="text-sm text-muted-foreground">Deploy containerized services inside AWS, Azure, or GCP VPC environments aligned with your infrastructure controls.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 items-start">

@@ -8,7 +8,7 @@ const phases = [
         id: "discovery",
         title: "Discovery & Metrics",
         shortTitle: "Discovery",
-        description: "We map your operational bottlenecks to clear, AI-solvable problems. We define rigid success criteria and establish how value will be quantified at the end of the engagement.",
+        description: "We map your operational bottlenecks to clear, testable AI opportunities. We define success criteria and establish how value will be measured at the end of the engagement.",
         number: "01",
     },
     {
@@ -22,28 +22,28 @@ const phases = [
         id: "prototype",
         title: "Prototype & Evaluate",
         shortTitle: "Prototype",
-        description: "Rapid build of the core workflow. We develop deterministic evaluation harnesses ensuring the model operates within acceptable error bounds on your specific tasks.",
+        description: "Rapid build of the core workflow. We develop evaluation harnesses to test model behavior, evidence quality, and failure modes against your specific tasks.",
         number: "03",
     },
     {
         id: "harden",
         title: "Control Hardening",
         shortTitle: "Harden",
-        description: "The prototype is wrapped in our defensive architecture. Policy engines, rate limiters, token budgets, and human-in-the-loop approval workflows are hardcoded in.",
+        description: "The prototype is wrapped in defensive architecture. Policy engines, rate limits, token budgets, and human-in-the-loop approval workflows are added where the workflow needs them.",
         number: "04",
     },
     {
         id: "deploy",
         title: "Deploy to Target",
         shortTitle: "Deploy",
-        description: "Moving exactly to where you require. We containerize and ship to your VPC, establish fully air-gapped instances, or deploy to managed cloud instances as dictated by policy.",
+        description: "We package the system for the target environment: managed cloud, client VPC, on-prem, or offline/local-first deployment where appropriate.",
         number: "05",
     },
     {
         id: "operate",
         title: "Operate & Audit",
         shortTitle: "Operate",
-        description: "Day-2 operations. Ensuring immutable trace logging is active. Handing off incident response runbooks and continuing to monitor performance against the initial metrics.",
+        description: "Day-2 operations. We verify trace logging, hand over incident and support runbooks, and monitor performance against the initial metrics.",
         number: "06",
     }
 ]
@@ -110,7 +110,7 @@ export function ProcessPage() {
                         Delivery <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">Playbook.</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                        The exact path we take to get governed AI systems into secure production. No detours, no fluff.
+                        The path we use to turn governed AI ideas into secure production systems with clear evidence, controls, and handoff.
                     </p>
                 </motion.div>
             </section>
@@ -264,7 +264,7 @@ export function ProcessPage() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to execute?</h2>
                     <p className="text-xl text-muted-foreground mb-10">Schedule a discovery call to audit your workflow viability.</p>
                     <Button asChild size="lg" className="h-14 px-10 text-lg rounded-full">
-                        <Link to="?contact=true">Start a Pilot</Link>
+                        <Link to="/contact">Start a Pilot</Link>
                     </Button>
                 </motion.div>
             </section>

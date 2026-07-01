@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom"
 export function ContactPage() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
+    const [submitError, setSubmitError] = useState("")
     const location = useLocation()
 
     // Parse inquiry from URL if coming from case studies
@@ -19,6 +20,7 @@ export function ContactPage() {
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitError("")
 
         const form = e.currentTarget
         const formData = new FormData(form)
@@ -42,6 +44,8 @@ export function ContactPage() {
             setSubmitSuccess(true)
         } catch (error) {
             console.error("Contact form submission failed:", error)
+            const message = error instanceof Error ? error.message : "Unable to submit request"
+            setSubmitError(message)
             setIsSubmitting(false)
         }
     }
@@ -69,13 +73,19 @@ export function ContactPage() {
                         </div>
                         <h3 className="text-3xl font-bold">Request Received</h3>
                         <p className="text-muted-foreground max-w-sm text-lg">
-                            Our architecture team will review your requirements and reach out within 24 hours to schedule a discovery call.
+                            Our architecture team will review your requirements and follow up with next steps.
                         </p>
                     </div>
                 ) : (
                     <div className="bg-card glass border-white/10 p-5 sm:p-8 rounded-2xl shadow-2xl">
                         <form onSubmit={handleFormSubmit} className="space-y-6">
                             <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+                            {submitError && (
+                                <div className="rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+                                    {submitError}
+                                </div>
+                            )}
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -145,7 +155,7 @@ export function ContactPage() {
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="timeline">Timeline (Optional)</Label>
-                                    <Input id="timeline" name="timeline" placeholder="e.g. Q3 2024" className="bg-background/50 h-12" />
+                                    <Input id="timeline" name="timeline" placeholder="e.g. Q3 2026" className="bg-background/50 h-12" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="budget">Budget Range (Optional)</Label>
